@@ -45,39 +45,7 @@ export default function InvoiceTableToolbar({
       }}
       sx={{ px: 2.5, py: 3 }}
     >
-      <TextField
-        fullWidth
-        select
-        label="Service type"
-        value={filterService}
-        onChange={onFilterService}
-        SelectProps={{
-          MenuProps: {
-            PaperProps: {
-              sx: { maxHeight: 220 },
-            },
-          },
-        }}
-        sx={{
-          maxWidth: { md: INPUT_WIDTH },
-          textTransform: 'capitalize',
-        }}
-      >
-        {optionsService.map((option) => (
-          <MenuItem
-            key={option}
-            value={option}
-            sx={{
-              mx: 1,
-              borderRadius: 0.75,
-              typography: 'body2',
-              textTransform: 'capitalize',
-            }}
-          >
-            {option}
-          </MenuItem>
-        ))}
-      </TextField>
+
 
       <DatePicker
         label="Start date"
@@ -113,7 +81,7 @@ export default function InvoiceTableToolbar({
         fullWidth
         value={filterName}
         onChange={onFilterName}
-        placeholder="Search client or invoice number..."
+        placeholder="Search customer or order number..."
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

@@ -28,7 +28,7 @@ export default function HomePage() {
 
       <ScrollProgress />
 
-      {/* <HomeHero /> */}
+      <HomeHero />
 
       <Box
         sx={{

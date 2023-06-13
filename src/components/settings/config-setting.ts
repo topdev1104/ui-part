@@ -7,7 +7,7 @@ export const defaultSettings: SettingsValueProps = {
   themeMode: 'light',
   themeDirection: 'ltr',
   themeContrast: 'default',
-  themeLayout: 'vertical',
+  themeLayout: 'horizontal',
   themeColorPresets: 'default',
   themeStretch: false,
 };

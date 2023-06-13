@@ -34,3 +34,19 @@ export type IInvoice = {
   dueDate: Date | number;
   items: IInvoiceItem[];
 };
+export type IOrder = {
+  id: string;
+  sent: number;
+  status: string;
+  totalPrice: number;
+  customerName  : string;
+  invoiceNumber: string;
+  subTotalPrice: number;
+  taxes: number | string;
+  discount: number | string;
+  invoiceFrom: IInvoiceAddress;
+  invoiceTo: IInvoiceAddress;
+  createDate: Date | number;
+  dueDate: Date | number;
+  items: IInvoiceItem[];
+};

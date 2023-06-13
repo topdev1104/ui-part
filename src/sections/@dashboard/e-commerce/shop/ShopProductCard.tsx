@@ -16,7 +16,7 @@ import Iconify from '../../../../components/iconify';
 import Label from '../../../../components/label';
 import Image from '../../../../components/image';
 import { ColorPreview } from '../../../../components/color-utils';
-
+import foodUrl from './food.png';
 // ----------------------------------------------------------------------
 
 type Props = {
@@ -25,7 +25,7 @@ type Props = {
 
 export default function ShopProductCard({ product }: Props) {
   const { id, name, cover, price, colors, status, available, sizes, priceSale } = product;
-
+  
   const dispatch = useDispatch();
 
   const linkTo = PATH_DASHBOARD.eCommerce.view(paramCase(name));
@@ -94,7 +94,7 @@ export default function ShopProductCard({ product }: Props) {
           <Iconify icon="ic:round-add-shopping-cart" />
         </Fab>
 
-        <Image alt={name} src={cover} ratio="1/1" sx={{ borderRadius: 1.5 }} />
+        <Image alt={name} src="https://websitedemos.net/fast-food-04/wp-content/uploads/sites/792/2021/03/hero-01-free-img.png" ratio="1/1" sx={{ borderRadius: 1.5 }} />
       </Box>
 
       <Stack spacing={2.5} sx={{ p: 3 }}>
@@ -103,7 +103,7 @@ export default function ShopProductCard({ product }: Props) {
         </Link>
 
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <ColorPreview colors={colors} />
+          {/* <ColorPreview colors={colors} /> */}
 
           <Stack direction="row" spacing={0.5} sx={{ typography: 'subtitle1' }}>
             {priceSale && (

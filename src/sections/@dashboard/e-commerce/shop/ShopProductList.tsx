@@ -1,20 +1,22 @@
 // @mui
 import { Box, BoxProps } from '@mui/material';
 // @type
+import { HomeHero } from 'src/sections/home';
 import { IProduct } from '../../../../@types/product';
 // components
 import { SkeletonProductItem } from '../../../../components/skeleton';
 //
 import ShopProductCard from './ShopProductCard';
 
-// ----------------------------------------------------------------------
 
+// ----------------------------------------------------------------------
 interface Props extends BoxProps {
   products: IProduct[];
   loading: boolean;
 }
 
 export default function ShopProductList({ products, loading, ...other }: Props) {
+  console.log(products,'products')
   return (
     <Box
       gap={3}
@@ -27,6 +29,7 @@ export default function ShopProductList({ products, loading, ...other }: Props) 
       }}
       {...other}
     >
+    {/* <HomeHero /> */}
       {(loading ? [...Array(12)] : products).map((product, index) =>
         product ? (
           <ShopProductCard key={product.id} product={product} />

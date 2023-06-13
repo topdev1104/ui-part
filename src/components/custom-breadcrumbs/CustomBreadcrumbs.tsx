@@ -1,8 +1,10 @@
 // @mui
 import { Box, Link, Stack, Typography, Breadcrumbs } from '@mui/material';
+import navConfig, { differentMenu } from 'src/layouts/dashboard/nav/config-navigation';
 //
 import { CustomBreadcrumbsProps } from './types';
 import LinkItem from './LinkItem';
+import { NavSectionHorizontal } from '../nav-section';
 
 // ----------------------------------------------------------------------
 
@@ -39,8 +41,12 @@ export default function CustomBreadcrumbs({
                   disabled={link.name === lastLink}
                 />
               ))}
+              {/* {(links.length === 2) && (
+                  <NavSectionHorizontal data={differentMenu} />
+                )} */}
             </Breadcrumbs>
           )}
+
         </Box>
 
         {action && <Box sx={{ flexShrink: 0 }}> {action} </Box>}

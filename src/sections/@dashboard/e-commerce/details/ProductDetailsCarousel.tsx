@@ -149,7 +149,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
           <Image
             key={img}
             alt="product"
-            src={img}
+            src="https://websitedemos.net/fast-food-04/wp-content/uploads/sites/792/2021/03/hero-01-free-img.png"
             ratio="1/1"
             onClick={() => handleOpenLightbox(img)}
             sx={{ cursor: 'zoom-in' }}
@@ -201,7 +201,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
       >
         {renderLargeImg}
 
-        {renderThumbnails}
+        {/* {renderThumbnails} */}
       </Box>
 
       <Lightbox

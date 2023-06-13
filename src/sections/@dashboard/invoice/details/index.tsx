@@ -74,9 +74,9 @@ export default function InvoiceDetails({ invoice }: Props) {
               <Label
                 variant="soft"
                 color={
-                  (status === 'paid' && 'success') ||
-                  (status === 'unpaid' && 'warning') ||
-                  (status === 'overdue' && 'error') ||
+                  (status === 'completed' && 'success') ||
+                  (status === 'pending' && 'warning') ||
+                  (status === 'canceled' && 'error') ||
                   'default'
                 }
                 sx={{ textTransform: 'uppercase', mb: 1 }}

@@ -3,6 +3,8 @@ import { paramCase } from 'change-case';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import { useNavigate } from 'react-router-dom';
+
+
 // @mui
 import { Link, Typography, Autocomplete, InputAdornment } from '@mui/material';
 // utils
@@ -76,6 +78,7 @@ export default function ShopProductSearch() {
         },
       }}
       renderInput={(params) => (
+        
         <CustomTextField
           {...params}
           width={220}
@@ -90,6 +93,7 @@ export default function ShopProductSearch() {
             ),
           }}
         />
+
       )}
       renderOption={(props, product, { inputValue }) => {
         const { name, cover } = product;

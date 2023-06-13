@@ -41,6 +41,7 @@ import {
   // Dashboard: Invoice
   InvoiceListPage,
   InvoiceDetailsPage,
+  OrderDetailsPage,
   InvoiceCreatePage,
   InvoiceEditPage,
   // Dashboard: Blog
@@ -126,6 +127,7 @@ import {
   DemoTextMaxLinePage,
   DemoUploadPage,
   DemoMarkdownPage,
+  OrderListPage,
 } from './elements';
 
 // ----------------------------------------------------------------------
@@ -187,9 +189,9 @@ export default function Router() {
             { element: <Navigate to="/dashboard/e-commerce/shop" replace />, index: true },
             { path: 'shop', element: <EcommerceShopPage /> },
             { path: 'product/:name', element: <EcommerceProductDetailsPage /> },
-            { path: 'list', element: <EcommerceProductListPage /> },
+            { path: 'list', element: <OrderListPage /> },
             { path: 'product/new', element: <EcommerceProductCreatePage /> },
-            { path: 'product/:name/edit', element: <EcommerceProductEditPage /> },
+            // { path: 'product/:name/edit', element: <EcommerceProductEditPage /> },
             { path: 'checkout', element: <EcommerceCheckoutPage /> },
           ],
         },
@@ -211,6 +213,7 @@ export default function Router() {
             { element: <Navigate to="/dashboard/invoice/list" replace />, index: true },
             { path: 'list', element: <InvoiceListPage /> },
             { path: ':id', element: <InvoiceDetailsPage /> },
+            { path: 'order/:id', element: <OrderDetailsPage /> },
             { path: ':id/edit', element: <InvoiceEditPage /> },
             { path: 'new', element: <InvoiceCreatePage /> },
           ],
@@ -254,6 +257,7 @@ export default function Router() {
     {
       element: <MainLayout />,
       children: [
+        // { element: <HomePage />, index: true },
         { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
         { path: 'app', element: <GeneralAppPage /> },
         { path: 'ecommerce', element: <GeneralEcommercePage /> },
@@ -267,9 +271,9 @@ export default function Router() {
             { element: <Navigate to="/dashboard/e-commerce/shop" replace />, index: true },
             { path: 'shop', element: <EcommerceShopPage /> },
             { path: 'product/:name', element: <EcommerceProductDetailsPage /> },
-            { path: 'list', element: <EcommerceProductListPage /> },
+            { path: 'order-list', element: <EcommerceProductListPage /> },
             { path: 'product/new', element: <EcommerceProductCreatePage /> },
-            { path: 'product/:name/edit', element: <EcommerceProductEditPage /> },
+            // { path: 'product/:name/edit', element: <EcommerceProductEditPage /> },
             { path: 'checkout', element: <EcommerceCheckoutPage /> },
           ],
         },

@@ -30,7 +30,7 @@ export default function CheckoutDelivery({ deliveryOptions, onApplyShipping, ...
 
   return (
     <Card {...other}>
-      <CardHeader title="Delivery options" />
+      <CardHeader title="Delivery time selection" />
 
       <CardContent>
         <Controller

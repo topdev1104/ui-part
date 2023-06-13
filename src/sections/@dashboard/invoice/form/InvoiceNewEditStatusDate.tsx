@@ -8,7 +8,7 @@ import { RHFSelect, RHFTextField } from '../../../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
-const STATUS_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
+const STATUS_OPTIONS = ['completed', 'pending', 'canceled'];
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ export default function InvoiceNewEditStatusDate() {
           </MenuItem>
         ))}
       </RHFSelect>
-
+{/* 
       <Controller
         name="createDate"
         control={control}
@@ -70,7 +70,7 @@ export default function InvoiceNewEditStatusDate() {
             )}
           />
         )}
-      />
+      /> */}
     </Stack>
   );
 }

@@ -3,8 +3,12 @@ import { useCallback } from 'react';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import SvgColor from 'src/components/svg-color/SvgColor';
+import Icon from 'src/components/color-utils/Icon';
+import Iconify from 'src/components/iconify/Iconify';
+
 // @mui
-import { Box, Grid, Card, Stack, Typography } from '@mui/material';
+import { Box, Grid, Card, Stack, Typography,Input, TextField, FormControlLabel, Checkbox } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // auth
 import { useAuthContext } from '../../../../auth/useAuthContext';
@@ -105,7 +109,14 @@ export default function AccountGeneral() {
     },
     [setValue]
   );
-
+  const shareReferralCode = ()=> {
+    const referralCode = "YOUR_REFERRAL_CODE";
+    const message = `Hey! Use my referral code ${referralCode} to get a discount on your next purchase.`;
+    
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl);
+  }
+  
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Grid container spacing={3}>
@@ -137,7 +148,13 @@ export default function AccountGeneral() {
               labelPlacement="start"
               label="Public Profile"
               sx={{ mt: 5 }}
+              // icon="icomoon-free:whatsapp"
             />
+            
+           <FormControlLabel 
+            control={<Checkbox onChange={shareReferralCode} icon={<Iconify icon="icomoon-free:whatsapp" width={16} sx={{ mr: 0.5 }} />} />}
+            label="Share Referral Code"
+          />
           </Card>
         </Grid>
 

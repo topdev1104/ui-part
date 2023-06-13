@@ -69,14 +69,14 @@ export default function App() {
                   <ScrollToTop />
                   <MotionLazyContainer>
                     <ThemeProvider>
-                      <ThemeSettings>
+                      {/* <ThemeSettings> */}
                         <ThemeLocalization>
                           <SnackbarProvider>
                             <StyledChart />
                             <Router />
                           </SnackbarProvider>
                         </ThemeLocalization>
-                      </ThemeSettings>
+                      {/* </ThemeSettings> */}
                     </ThemeProvider>
                   </MotionLazyContainer>
                 </BrowserRouter>

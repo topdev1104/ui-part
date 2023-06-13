@@ -141,7 +141,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       email,
       password,
     });
-    const { accessToken, user } = response.data;
+    // const response = {data:{accessToken:"sdfsafdasdfdsfgsdfgsdfg",user:{email:"demo@minimals.cc",password:"demo1234"}}}
+    const { accessToken ,user } = response.data;
 
     setSession(accessToken);
 

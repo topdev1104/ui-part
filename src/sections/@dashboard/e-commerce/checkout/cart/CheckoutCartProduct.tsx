@@ -33,7 +33,7 @@ export default function CheckoutCartProduct({
       <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
         <Image
           alt="product image"
-          src={cover}
+          src="https://websitedemos.net/fast-food-04/wp-content/uploads/sites/792/2021/03/hero-01-free-img.png"
           sx={{ width: 64, height: 64, borderRadius: 1.5, mr: 2 }}
         />
 

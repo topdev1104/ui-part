@@ -138,15 +138,15 @@ export default function ProductDetailsSummary({
         {...other}
       >
         <Stack spacing={2}>
-          <Label
+          {/* <Label
             variant="soft"
             color={inventoryType === 'in_stock' ? 'success' : 'error'}
             sx={{ textTransform: 'uppercase', mr: 'auto' }}
           >
             {sentenceCase(inventoryType || '')}
-          </Label>
+          </Label> */}
 
-          <Typography
+          {/* <Typography
             variant="overline"
             component="div"
             sx={{
@@ -154,7 +154,7 @@ export default function ProductDetailsSummary({
             }}
           >
             {status}
-          </Typography>
+          </Typography> */}
 
           <Typography variant="h5">{name}</Typography>
 
@@ -183,7 +183,7 @@ export default function ProductDetailsSummary({
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
+        {/* <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography variant="subtitle2">Color</Typography>
 
           <Controller
@@ -203,7 +203,7 @@ export default function ProductDetailsSummary({
               />
             )}
           />
-        </Stack>
+        </Stack> */}
 
         <Stack direction="row" justifyContent="space-between">
           <Typography variant="subtitle2" sx={{ height: 40, lineHeight: '40px', flexGrow: 1 }}>

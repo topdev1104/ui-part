@@ -109,7 +109,7 @@ export default function InvoiceListPage() {
   const [filterEndDate, setFilterEndDate] = useState<Date | null>(null);
 
   const [filterStartDate, setFilterStartDate] = useState<Date | null>(null);
-
+  console.log(tableData,'tableDatatableDatatableData')
   const dataFiltered = applyFilter({
     inputData: tableData,
     comparator: getComparator(order, orderBy),
@@ -151,10 +151,10 @@ export default function InvoiceListPage() {
 
   const TABS = [
     { value: 'all', label: 'All', color: 'info', count: tableData.length },
-    { value: 'paid', label: 'Paid', color: 'success', count: getLengthByStatus('paid') },
-    { value: 'unpaid', label: 'Unpaid', color: 'warning', count: getLengthByStatus('unpaid') },
-    { value: 'overdue', label: 'Overdue', color: 'error', count: getLengthByStatus('overdue') },
-    { value: 'draft', label: 'Draft', color: 'default', count: getLengthByStatus('draft') },
+    { value: 'completed', label: 'Completed', color: 'success', count: getLengthByStatus('completed') },
+    { value: 'pending', label: 'Pending', color: 'warning', count: getLengthByStatus('pending') },
+    { value: 'canceled', label: 'Canceled', color: 'error', count: getLengthByStatus('canceled') },
+    // { value: 'draft', label: 'Draft', color: 'default', count: getLengthByStatus('draft') },
   ] as const;
 
   const handleOpenConfirm = () => {
@@ -233,7 +233,7 @@ export default function InvoiceListPage() {
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Invoice List"
+          heading="Transaction List"
           links={[
             {
               name: 'Dashboard',
@@ -247,16 +247,16 @@ export default function InvoiceListPage() {
               name: 'List',
             },
           ]}
-          action={
-            <Button
-              component={RouterLink}
-              to={PATH_DASHBOARD.invoice.new}
-              variant="contained"
-              startIcon={<Iconify icon="eva:plus-fill" />}
-            >
-              New Invoice
-            </Button>
-          }
+          // action={
+          //   <Button
+          //     component={RouterLink}
+          //     to={PATH_DASHBOARD.invoice.new}
+          //     variant="contained"
+          //     startIcon={<Iconify icon="eva:plus-fill" />}
+          //   >
+          //     New Invoice
+          //   </Button>
+          // }
         />
 
         <Card sx={{ mb: 5 }}>
@@ -276,7 +276,7 @@ export default function InvoiceListPage() {
               />
 
               <InvoiceAnalytic
-                title="Paid"
+                title="Completed"
                 total={getLengthByStatus('paid')}
                 percent={getPercentByStatus('paid')}
                 price={getTotalPriceByStatus('paid')}
@@ -285,7 +285,7 @@ export default function InvoiceListPage() {
               />
 
               <InvoiceAnalytic
-                title="Unpaid"
+                title="Pending"
                 total={getLengthByStatus('unpaid')}
                 percent={getPercentByStatus('unpaid')}
                 price={getTotalPriceByStatus('unpaid')}
@@ -294,7 +294,7 @@ export default function InvoiceListPage() {
               />
 
               <InvoiceAnalytic
-                title="Overdue"
+                title="Canceled"
                 total={getLengthByStatus('overdue')}
                 percent={getPercentByStatus('overdue')}
                 price={getTotalPriceByStatus('overdue')}
@@ -302,14 +302,14 @@ export default function InvoiceListPage() {
                 color={theme.palette.error.main}
               />
 
-              <InvoiceAnalytic
+              {/* <InvoiceAnalytic
                 title="Draft"
                 total={getLengthByStatus('draft')}
                 percent={getPercentByStatus('draft')}
                 price={getTotalPriceByStatus('draft')}
                 icon="eva:file-fill"
                 color={theme.palette.text.secondary}
-              />
+              /> */}
             </Stack>
           </Scrollbar>
         </Card>

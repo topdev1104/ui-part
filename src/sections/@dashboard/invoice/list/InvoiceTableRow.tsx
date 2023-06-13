@@ -132,35 +132,42 @@ export default function InvoiceTableRow({
       >
         <MenuItem
           onClick={() => {
-            onViewRow();
+            // onViewRow();
             handleClosePopover();
           }}
         >
-          <Iconify icon="eva:eye-fill" />
-          View
+          {/* <Iconify icon="eva:checkmark-circle-2-fill" /> */}
+          <Iconify icon="eva:checkmark-circle-2-fill" color="success" />
+          Completed
         </MenuItem>
 
         <MenuItem
           onClick={() => {
-            onEditRow();
+            // onEditRow();
             handleClosePopover();
           }}
         >
-          <Iconify icon="eva:edit-fill" />
-          Edit
+          <Iconify icon="eva:clock-fill" color="info" />
+          {/* <Iconify icon="eva:pending" /> */}
+          Pending
         </MenuItem>
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
+        {/* info: <SnackbarIcon icon="eva:info-fill" color="info" />,
+          success: <SnackbarIcon icon="eva:checkmark-circle-2-fill" color="success" />,
+          warning: <SnackbarIcon icon="eva:alert-triangle-fill" color="warning" />,
+          error: <SnackbarIcon icon="eva:alert-circle-fill" color="error" />, */}
+
         <MenuItem
           onClick={() => {
-            handleOpenConfirm();
+            // handleOpenConfirm();
             handleClosePopover();
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="eva:trash-2-outline" />
-          Delete
+          <Iconify icon="eva:alert-circle-fill" color="error" />
+          Canceled
         </MenuItem>
       </MenuPopover>
 

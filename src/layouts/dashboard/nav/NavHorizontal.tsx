@@ -26,6 +26,9 @@ function NavHorizontal() {
       }}
     >
       <Toolbar
+        style={{
+          paddingTop:"10px"
+        }}
         sx={{
           ...bgBlur({
             color: theme.palette.background.default,
@@ -54,6 +57,7 @@ function Shadow({ sx, ...other }: BoxProps) {
         height: 24,
         zIndex: -1,
         width: 1,
+        top:10,
         m: 'auto',
         borderRadius: '50%',
         position: 'absolute',

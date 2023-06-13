@@ -57,9 +57,9 @@ export default function Header({ onOpenNav }: Props) {
         justifyContent="flex-end"
         spacing={{ xs: 0.5, sm: 1.5 }}
       >
-        <LanguagePopover />
+        {/* <LanguagePopover />
 
-        <NotificationsPopover />
+        <NotificationsPopover /> */}
 
         <ContactsPopover />
 

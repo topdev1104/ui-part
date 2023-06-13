@@ -1,6 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import orderBy from 'lodash/orderBy';
+import { NavSectionHorizontal } from 'src/components/nav-section';
+import { differentMenu, differentMenu1 } from 'src/layouts/dashboard/nav/config-navigation';
+
 // form
 import { useForm } from 'react-hook-form';
 // @mui
@@ -97,10 +100,9 @@ export default function EcommerceShopPage() {
             links={[
               { name: 'Dashboard', href: PATH_DASHBOARD.root },
               {
-                name: 'E-Commerce',
+                name: 'E-Ordering',
                 href: PATH_DASHBOARD.eCommerce.root,
               },
-              { name: 'Shop' },
             ]}
           />
 
@@ -113,14 +115,26 @@ export default function EcommerceShopPage() {
           >
             <ShopProductSearch />
 
+            <NavSectionHorizontal data={differentMenu} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+            <NavSectionHorizontal data={differentMenu1} />
+
             <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-              <ShopFilterDrawer
+              {/* <ShopFilterDrawer
                 isDefault={isDefault}
                 open={openFilter}
                 onOpen={handleOpenFilter}
                 onClose={handleCloseFilter}
                 onResetFilter={handleResetFilter}
-              />
+              /> */}
 
               <ShopProductSort />
             </Stack>

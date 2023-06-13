@@ -22,9 +22,9 @@ type Props = {
 export default function AccountBilling({ cards, addressBook, invoices }: Props) {
   return (
     <Grid container spacing={5}>
-      <Grid item xs={12} md={8}>
+      <Grid item xs={12} md={12}>
         <Stack spacing={3}>
-          <Card sx={{ p: 3 }}>
+          {/* <Card sx={{ p: 3 }}>
             <Typography
               variant="overline"
               sx={{ mb: 3, display: 'block', color: 'text.secondary' }}
@@ -47,7 +47,7 @@ export default function AccountBilling({ cards, addressBook, invoices }: Props) 
                 Upgrade plan
               </Button>
             </Box>
-          </Card>
+          </Card> */}
 
           <AccountBillingPaymentMethod cards={cards} />
 
@@ -55,9 +55,9 @@ export default function AccountBilling({ cards, addressBook, invoices }: Props) 
         </Stack>
       </Grid>
 
-      <Grid item xs={12} md={4}>
+      {/* <Grid item xs={12} md={4}>
         <AccountBillingInvoiceHistory invoices={invoices} />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }

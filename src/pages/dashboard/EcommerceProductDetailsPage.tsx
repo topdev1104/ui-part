@@ -127,7 +127,7 @@ export default function EcommerceProductDetailsPage() {
               </Grid>
             </Grid>
 
-            <Box
+            {/* <Box
               gap={5}
               display="grid"
               gridTemplateColumns={{
@@ -160,7 +160,7 @@ export default function EcommerceProductDetailsPage() {
                   <Typography sx={{ color: 'text.secondary' }}>{item.description}</Typography>
                 </Box>
               ))}
-            </Box>
+            </Box> */}
 
             <Card>
               <Tabs

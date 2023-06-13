@@ -120,13 +120,13 @@ export default function InvoiceNewEditForm({ isEdit, currentInvoice }: Props) {
   return (
     <FormProvider methods={methods}>
       <Card>
-        <InvoiceNewEditAddress />
+        {/* <InvoiceNewEditAddress /> */}
 
         <InvoiceNewEditStatusDate />
 
-        <InvoiceNewEditDetails />
+        {/* <InvoiceNewEditDetails /> */}
       </Card>
-
+{/* 
       <Stack justifyContent="flex-end" direction="row" spacing={2} sx={{ mt: 3 }}>
         <LoadingButton
           color="inherit"
@@ -146,7 +146,7 @@ export default function InvoiceNewEditForm({ isEdit, currentInvoice }: Props) {
         >
           {isEdit ? 'Update' : 'Create'} & Send
         </LoadingButton>
-      </Stack>
+      </Stack> */}
     </FormProvider>
   );
 }

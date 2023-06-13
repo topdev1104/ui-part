@@ -58,8 +58,12 @@ export const EcommerceCheckoutPage = Loadable(
 
 // DASHBOARD: INVOICE
 export const InvoiceListPage = Loadable(lazy(() => import('../pages/dashboard/InvoiceListPage')));
+export const OrderListPage = Loadable(lazy(() => import('../pages/dashboard/OrderListPage')));
 export const InvoiceDetailsPage = Loadable(
   lazy(() => import('../pages/dashboard/InvoiceDetailsPage'))
+);
+export const OrderDetailsPage = Loadable(
+  lazy(() => import('../pages/dashboard/OrderDetailsPage'))
 );
 export const InvoiceCreatePage = Loadable(
   lazy(() => import('../pages/dashboard/InvoiceCreatePage'))

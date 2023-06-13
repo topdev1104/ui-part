@@ -17,19 +17,19 @@ export default function EcommerceProductCreatePage() {
   return (
     <>
       <Helmet>
-        <title> Ecommerce: Create a new product | Minimal UI</title>
+        <title> Ecommerce: Create a new Item | Minimal UI</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Create a new product"
+          heading="Create a new Item"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
             {
               name: 'E-Commerce',
               href: PATH_DASHBOARD.eCommerce.root,
             },
-            { name: 'New product' },
+            { name: 'New Item' },
           ]}
         />
         <ProductNewEditForm />
