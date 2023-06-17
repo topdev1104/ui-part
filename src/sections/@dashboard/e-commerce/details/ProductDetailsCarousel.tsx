@@ -150,19 +150,19 @@ export default function ProductDetailsCarousel({ product }: Props) {
             key={img}
             alt="product"
             src="https://websitedemos.net/fast-food-04/wp-content/uploads/sites/792/2021/03/hero-01-free-img.png"
-            ratio="1/1"
-            onClick={() => handleOpenLightbox(img)}
-            sx={{ cursor: 'zoom-in' }}
+          // ratio="1/1"
+          // onClick={() => handleOpenLightbox(img)}
+          // sx={{ cursor: 'zoom-in' }}
           />
         ))}
       </Carousel>
-
+      {/* 
       <CarouselArrowIndex
         index={currentIndex}
         total={product.images.length}
         onNext={handleNext}
         onPrevious={handlePrev}
-      />
+      /> */}
     </Box>
   );
 
@@ -179,10 +179,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
               width: THUMB_SIZE,
               height: THUMB_SIZE,
               borderRadius: 1.5,
-              cursor: 'pointer',
-              ...(currentIndex === index && {
-                border: `solid 2px ${theme.palette.primary.main}`,
-              }),
+
             }}
           />
         ))}

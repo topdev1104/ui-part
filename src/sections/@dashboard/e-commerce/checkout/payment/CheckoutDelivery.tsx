@@ -12,7 +12,11 @@ import {
   CardHeader,
   CardContent,
   FormControlLabel,
+  TextField,
 } from '@mui/material';
+import { DateTimePicker } from '@mui/x-date-pickers';
+import { useState } from 'react';
+
 // @types
 import { ICheckoutDeliveryOption } from '../../../../../@types/product';
 // components
@@ -27,6 +31,7 @@ interface Props extends CardProps {
 
 export default function CheckoutDelivery({ deliveryOptions, onApplyShipping, ...other }: Props) {
   const { control } = useFormContext();
+  const [value, setValue] = useState<Date | null>(new Date());
 
   return (
     <Card {...other}>
@@ -37,31 +42,33 @@ export default function CheckoutDelivery({ deliveryOptions, onApplyShipping, ...
           name="delivery"
           control={control}
           render={({ field }) => (
-            <RadioGroup
-              {...field}
-              onChange={(event) => {
-                const { value } = event.target;
-                field.onChange(Number(value));
-                onApplyShipping(Number(value));
+
+            <Box
+              gap={2}
+              display="grid"
+              gridTemplateColumns={{
+                xs: 'repeat(1, 1fr)',
+                sm: 'repeat(1, 1fr)',
               }}
             >
-              <Box
-                gap={2}
-                display="grid"
-                gridTemplateColumns={{
-                  xs: 'repeat(1, 1fr)',
-                  sm: 'repeat(2, 1fr)',
+              <DateTimePicker
+
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue);
                 }}
-              >
-                {deliveryOptions.map((option) => (
-                  <DeliveryOption
-                    key={option.value}
-                    option={option}
-                    isSelected={field.value === option.value}
+                label="Start date"
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    fullWidth
+                    sx={{
+                      maxWidth: { md: 300 },
+                    }}
                   />
-                ))}
-              </Box>
-            </RadioGroup>
+                )}
+              />
+            </Box>
           )}
         />
       </CardContent>

@@ -1,5 +1,5 @@
 // routes
-import { PATH_DASHBOARD,PATH_PAGE } from '../../../routes/paths';
+import { PATH_DASHBOARD, PATH_PAGE } from '../../../routes/paths';
 // components
 import Label from '../../../components/label';
 import Iconify from '../../../components/iconify';
@@ -49,8 +49,8 @@ const navConfig = [
         path: PATH_DASHBOARD.user.account,
         icon: ICONS.user,
         children: [
-          { title: 'create', path: PATH_DASHBOARD.user.new },
-          { title: 'edit', path: PATH_DASHBOARD.user.demoEdit },
+          // { title: 'create', path: PATH_DASHBOARD.user.new },
+          // { title: 'edit', path: PATH_DASHBOARD.user.demoEdit },
           { title: 'account', path: PATH_DASHBOARD.user.account },
         ],
       },
@@ -60,9 +60,9 @@ const navConfig = [
         icon: ICONS.cart,
         children: [
           { title: 'shop', path: PATH_DASHBOARD.eCommerce.shop },
-          { title: 'product', path: PATH_DASHBOARD.eCommerce.demoView },
+          // { title: 'product', path: PATH_DASHBOARD.eCommerce.demoView },
           { title: 'order-list', path: PATH_DASHBOARD.eCommerce.list },
-          { title: 'add item', path: PATH_DASHBOARD.eCommerce.new },
+          // { title: 'add item', path: PATH_DASHBOARD.eCommerce.new },
           { title: 'checkout', path: PATH_DASHBOARD.eCommerce.checkout },
         ],
       },
@@ -80,7 +80,7 @@ const navConfig = [
   },
 ];
 export const differentMenu = [
-    // GENERAL
+  // GENERAL
   // ----------------------------------------------------------------------
   {
 
@@ -100,8 +100,8 @@ export const differentMenu = [
   },
 ];
 export const differentMenu1 = [
-    // GENERAL
+  // GENERAL
   // ----------------------------------------------------------------------
- 
+
 ];
 export default navConfig;

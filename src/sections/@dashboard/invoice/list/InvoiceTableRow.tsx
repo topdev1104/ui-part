@@ -68,9 +68,6 @@ export default function InvoiceTableRow({
   return (
     <>
       <TableRow hover selected={selected}>
-        <TableCell padding="checkbox">
-          <Checkbox checked={selected} onClick={onSelectRow} />
-        </TableCell>
 
         <TableCell>
           <Stack direction="row" alignItems="center" spacing={2}>
@@ -80,15 +77,6 @@ export default function InvoiceTableRow({
               <Typography variant="subtitle2" noWrap>
                 {invoiceTo.name}
               </Typography>
-
-              <Link
-                noWrap
-                variant="body2"
-                onClick={onViewRow}
-                sx={{ color: 'text.disabled', cursor: 'pointer' }}
-              >
-                {`INV-${invoiceNumber}`}
-              </Link>
             </div>
           </Stack>
         </TableCell>
@@ -116,60 +104,8 @@ export default function InvoiceTableRow({
             {status}
           </Label>
         </TableCell>
-
-        <TableCell align="right">
-          <IconButton color={openPopover ? 'inherit' : 'default'} onClick={handleOpenPopover}>
-            <Iconify icon="eva:more-vertical-fill" />
-          </IconButton>
-        </TableCell>
       </TableRow>
 
-      <MenuPopover
-        open={openPopover}
-        onClose={handleClosePopover}
-        arrow="right-top"
-        sx={{ width: 160 }}
-      >
-        <MenuItem
-          onClick={() => {
-            // onViewRow();
-            handleClosePopover();
-          }}
-        >
-          {/* <Iconify icon="eva:checkmark-circle-2-fill" /> */}
-          <Iconify icon="eva:checkmark-circle-2-fill" color="success" />
-          Completed
-        </MenuItem>
-
-        <MenuItem
-          onClick={() => {
-            // onEditRow();
-            handleClosePopover();
-          }}
-        >
-          <Iconify icon="eva:clock-fill" color="info" />
-          {/* <Iconify icon="eva:pending" /> */}
-          Pending
-        </MenuItem>
-
-        <Divider sx={{ borderStyle: 'dashed' }} />
-
-        {/* info: <SnackbarIcon icon="eva:info-fill" color="info" />,
-          success: <SnackbarIcon icon="eva:checkmark-circle-2-fill" color="success" />,
-          warning: <SnackbarIcon icon="eva:alert-triangle-fill" color="warning" />,
-          error: <SnackbarIcon icon="eva:alert-circle-fill" color="error" />, */}
-
-        <MenuItem
-          onClick={() => {
-            // handleOpenConfirm();
-            handleClosePopover();
-          }}
-          sx={{ color: 'error.main' }}
-        >
-          <Iconify icon="eva:alert-circle-fill" color="error" />
-          Canceled
-        </MenuItem>
-      </MenuPopover>
 
       <ConfirmDialog
         open={openConfirm}

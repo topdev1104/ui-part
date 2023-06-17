@@ -109,7 +109,7 @@ export default function InvoiceListPage() {
   const [filterEndDate, setFilterEndDate] = useState<Date | null>(null);
 
   const [filterStartDate, setFilterStartDate] = useState<Date | null>(null);
-  console.log(tableData,'tableDatatableDatatableData')
+  console.log(tableData, 'tableDatatableDatatableData')
   const dataFiltered = applyFilter({
     inputData: tableData,
     comparator: getComparator(order, orderBy),
@@ -247,72 +247,18 @@ export default function InvoiceListPage() {
               name: 'List',
             },
           ]}
-          // action={
-          //   <Button
-          //     component={RouterLink}
-          //     to={PATH_DASHBOARD.invoice.new}
-          //     variant="contained"
-          //     startIcon={<Iconify icon="eva:plus-fill" />}
-          //   >
-          //     New Invoice
-          //   </Button>
-          // }
+        // action={
+        //   <Button
+        //     component={RouterLink}
+        //     to={PATH_DASHBOARD.invoice.new}
+        //     variant="contained"
+        //     startIcon={<Iconify icon="eva:plus-fill" />}
+        //   >
+        //     New Invoice
+        //   </Button>
+        // }
         />
 
-        <Card sx={{ mb: 5 }}>
-          <Scrollbar>
-            <Stack
-              direction="row"
-              divider={<Divider orientation="vertical" flexItem sx={{ borderStyle: 'dashed' }} />}
-              sx={{ py: 2 }}
-            >
-              <InvoiceAnalytic
-                title="Total"
-                total={tableData.length}
-                percent={100}
-                price={sumBy(tableData, 'totalPrice')}
-                icon="ic:round-receipt"
-                color={theme.palette.info.main}
-              />
-
-              <InvoiceAnalytic
-                title="Completed"
-                total={getLengthByStatus('paid')}
-                percent={getPercentByStatus('paid')}
-                price={getTotalPriceByStatus('paid')}
-                icon="eva:checkmark-circle-2-fill"
-                color={theme.palette.success.main}
-              />
-
-              <InvoiceAnalytic
-                title="Pending"
-                total={getLengthByStatus('unpaid')}
-                percent={getPercentByStatus('unpaid')}
-                price={getTotalPriceByStatus('unpaid')}
-                icon="eva:clock-fill"
-                color={theme.palette.warning.main}
-              />
-
-              <InvoiceAnalytic
-                title="Canceled"
-                total={getLengthByStatus('overdue')}
-                percent={getPercentByStatus('overdue')}
-                price={getTotalPriceByStatus('overdue')}
-                icon="eva:bell-fill"
-                color={theme.palette.error.main}
-              />
-
-              {/* <InvoiceAnalytic
-                title="Draft"
-                total={getLengthByStatus('draft')}
-                percent={getPercentByStatus('draft')}
-                price={getTotalPriceByStatus('draft')}
-                icon="eva:file-fill"
-                color={theme.palette.text.secondary}
-              /> */}
-            </Stack>
-          </Scrollbar>
-        </Card>
 
         <Card>
           <Tabs
