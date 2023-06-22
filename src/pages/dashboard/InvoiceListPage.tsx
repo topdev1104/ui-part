@@ -64,8 +64,8 @@ const TABLE_HEAD = [
   { id: 'dueDate', label: 'Due', align: 'left' },
   { id: 'price', label: 'Amount', align: 'center', width: 140 },
   { id: 'sent', label: 'Sent', align: 'center', width: 140 },
-  { id: 'status', label: 'Status', align: 'left' },
-  { id: '' },
+  // { id: 'status', label: 'Status', align: 'left' },
+  // { id: '' },
 ];
 
 // ----------------------------------------------------------------------
@@ -228,7 +228,7 @@ export default function InvoiceListPage() {
   return (
     <>
       <Helmet>
-        <title> Invoice: List | Minimal UI</title>
+        <title> Transaction : List | Zetoma UI</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
@@ -240,12 +240,9 @@ export default function InvoiceListPage() {
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Invoices',
+              name: 'Transaction List',
               href: PATH_DASHBOARD.invoice.root,
-            },
-            {
-              name: 'List',
-            },
+            }
           ]}
         // action={
         //   <Button
@@ -261,7 +258,7 @@ export default function InvoiceListPage() {
 
 
         <Card>
-          <Tabs
+          {/* <Tabs
             value={filterStatus}
             onChange={handleFilterStatus}
             sx={{
@@ -281,7 +278,7 @@ export default function InvoiceListPage() {
                 }
               />
             ))}
-          </Tabs>
+          </Tabs> */}
 
           <Divider />
 

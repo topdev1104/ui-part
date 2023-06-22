@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
-import { Stack, IconButton, InputAdornment, Alert } from '@mui/material';
+import { Stack, IconButton, InputAdornment, Alert, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
@@ -67,12 +67,32 @@ export default function AuthRegisterForm() {
       });
     }
   };
+  const [alignment, setAlignment] = React.useState('web');
+
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string,
+  ) => {
+    setAlignment(newAlignment);
+  };
+
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={2.5}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
+        <ToggleButtonGroup
+          color="primary"
+          value={alignment}
+          exclusive
+          onChange={handleChange}
+          aria-label="Platform"
+        >
+          <ToggleButton value="web">User</ToggleButton>
+          <ToggleButton value="android">Restaurant</ToggleButton>
+        </ToggleButtonGroup>
+        {alignment === "android" && <RHFTextField name="restaurant" label="Restaurant Name" />}
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
           <RHFTextField name="firstName" label="First name" />
           <RHFTextField name="lastName" label="Last name" />

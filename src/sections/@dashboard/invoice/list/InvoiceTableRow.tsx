@@ -90,7 +90,7 @@ export default function InvoiceTableRow({
         <TableCell align="center" sx={{ textTransform: 'capitalize' }}>
           {sent}
         </TableCell>
-
+        {/* 
         <TableCell align="left">
           <Label
             variant="soft"
@@ -103,7 +103,7 @@ export default function InvoiceTableRow({
           >
             {status}
           </Label>
-        </TableCell>
+        </TableCell> */}
       </TableRow>
 
 
