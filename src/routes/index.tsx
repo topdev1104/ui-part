@@ -4,7 +4,7 @@ import AuthGuard from '../auth/AuthGuard';
 import GuestGuard from '../auth/GuestGuard';
 // layouts
 import MainLayout from '../layouts/main';
-import SimpleLayout from '../layouts/simple';
+
 import CompactLayout from '../layouts/compact';
 import DashboardLayout from '../layouts/dashboard';
 // config
@@ -35,7 +35,6 @@ import {
   EcommerceShopPage,
   EcommerceCheckoutPage,
   EcommerceProductListPage,
-  EcommerceProductEditPage,
   EcommerceProductCreatePage,
   EcommerceProductDetailsPage,
   // Dashboard: Invoice
@@ -44,89 +43,21 @@ import {
   OrderDetailsPage,
   InvoiceCreatePage,
   InvoiceEditPage,
-  // Dashboard: Blog
-  BlogPostsPage,
-  BlogPostPage,
-  BlogNewPostPage,
-  // Dashboard: FileManager
-  FileManagerPage,
+
   // Dashboard: App
-  ChatPage,
-  MailPage,
-  CalendarPage,
-  KanbanPage,
-  //
-  BlankPage,
-  PermissionDeniedPage,
+
+
   //
   Page500,
   Page403,
   Page404,
-  HomePage,
-  FaqsPage,
-  AboutPage,
-  Contact,
-  PricingPage,
-  PaymentPage,
+
   ComingSoonPage,
   MaintenancePage,
   //
-  ComponentsOverviewPage,
-  FoundationColorsPage,
-  FoundationTypographyPage,
-  FoundationShadowsPage,
-  FoundationGridPage,
-  FoundationIconsPage,
+
   //
-  MUIAccordionPage,
-  MUIAlertPage,
-  MUIAutocompletePage,
-  MUIAvatarPage,
-  MUIBadgePage,
-  MUIBreadcrumbsPage,
-  MUIButtonsPage,
-  MUICheckboxPage,
-  MUIChipPage,
-  MUIDataGridPage,
-  MUIDialogPage,
-  MUIListPage,
-  MUIMenuPage,
-  MUIPaginationPage,
-  MUIPickersPage,
-  MUIPopoverPage,
-  MUIProgressPage,
-  MUIRadioButtonsPage,
-  MUIRatingPage,
-  MUISliderPage,
-  MUIStepperPage,
-  MUISwitchPage,
-  MUITablePage,
-  MUITabsPage,
-  MUITextFieldPage,
-  MUITimelinePage,
-  MUITooltipPage,
-  MUITransferListPage,
-  MUITreesViewPage,
-  //
-  DemoAnimatePage,
-  DemoCarouselsPage,
-  DemoChartsPage,
-  DemoCopyToClipboardPage,
-  DemoEditorPage,
-  DemoFormValidationPage,
-  DemoImagePage,
-  DemoLabelPage,
-  DemoLightboxPage,
-  DemoMapPage,
-  DemoMegaMenuPage,
-  DemoMultiLanguagePage,
-  DemoNavigationBarPage,
-  DemoOrganizationalChartPage,
-  DemoScrollbarPage,
-  DemoSnackbarPage,
-  DemoTextMaxLinePage,
-  DemoUploadPage,
-  DemoMarkdownPage,
+
   OrderListPage,
 } from './elements';
 
@@ -218,38 +149,7 @@ export default function Router() {
             { path: 'new', element: <InvoiceCreatePage /> },
           ],
         },
-        {
-          path: 'blog',
-          children: [
-            { element: <Navigate to="/dashboard/blog/posts" replace />, index: true },
-            { path: 'posts', element: <BlogPostsPage /> },
-            { path: 'post/:title', element: <BlogPostPage /> },
-            { path: 'new', element: <BlogNewPostPage /> },
-          ],
-        },
-        { path: 'files-manager', element: <FileManagerPage /> },
-        {
-          path: 'mail',
-          children: [
-            { element: <Navigate to="/dashboard/mail/all" replace />, index: true },
-            { path: 'label/:customLabel', element: <MailPage /> },
-            { path: 'label/:customLabel/:mailId', element: <MailPage /> },
-            { path: ':systemLabel', element: <MailPage /> },
-            { path: ':systemLabel/:mailId', element: <MailPage /> },
-          ],
-        },
-        {
-          path: 'chat',
-          children: [
-            { element: <ChatPage />, index: true },
-            { path: 'new', element: <ChatPage /> },
-            { path: ':conversationKey', element: <ChatPage /> },
-          ],
-        },
-        { path: 'calendar', element: <CalendarPage /> },
-        { path: 'kanban', element: <KanbanPage /> },
-        { path: 'permission-denied', element: <PermissionDeniedPage /> },
-        { path: 'blank', element: <BlankPage /> },
+
       ],
     },
 
@@ -299,47 +199,11 @@ export default function Router() {
             { path: 'new', element: <InvoiceCreatePage /> },
           ],
         },
-        {
-          path: 'blog',
-          children: [
-            { element: <Navigate to="/dashboard/blog/posts" replace />, index: true },
-            { path: 'posts', element: <BlogPostsPage /> },
-            { path: 'post/:title', element: <BlogPostPage /> },
-            { path: 'new', element: <BlogNewPostPage /> },
-          ],
-        },
-        { path: 'files-manager', element: <FileManagerPage /> },
-        {
-          path: 'mail',
-          children: [
-            { element: <Navigate to="/dashboard/mail/all" replace />, index: true },
-            { path: 'label/:customLabel', element: <MailPage /> },
-            { path: 'label/:customLabel/:mailId', element: <MailPage /> },
-            { path: ':systemLabel', element: <MailPage /> },
-            { path: ':systemLabel/:mailId', element: <MailPage /> },
-          ],
-        },
-        {
-          path: 'chat',
-          children: [
-            { element: <ChatPage />, index: true },
-            { path: 'new', element: <ChatPage /> },
-            { path: ':conversationKey', element: <ChatPage /> },
-          ],
-        },
-        { path: 'calendar', element: <CalendarPage /> },
-        { path: 'kanban', element: <KanbanPage /> },
-        { path: 'permission-denied', element: <PermissionDeniedPage /> },
-        { path: 'blank', element: <BlankPage /> },
+
+
       ],
     },
-    {
-      element: <SimpleLayout />,
-      children: [
-        { path: 'pricing', element: <PricingPage /> },
-        { path: 'payment', element: <PaymentPage /> },
-      ],
-    },
+
     {
       element: <CompactLayout />,
       children: [
