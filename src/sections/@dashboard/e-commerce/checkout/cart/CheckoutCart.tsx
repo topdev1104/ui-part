@@ -8,7 +8,6 @@ import { PATH_DASHBOARD } from '../../../../../routes/paths';
 import { IProductCheckoutState } from '../../../../../@types/product';
 // components
 import Iconify from '../../../../../components/iconify';
-import EmptyContent from '../../../../../components/empty-content';
 //
 import CheckoutSummary from '../CheckoutSummary';
 import CheckoutCartProductList from './CheckoutCartProductList';
@@ -62,11 +61,12 @@ export default function CheckoutCart({
               onDecreaseQuantity={onDecreaseQuantity}
             />
           ) : (
-            <EmptyContent
-              title="Cart is empty"
-              description="Look like you have no items in your shopping cart."
-              img="/assets/illustrations/illustration_empty_cart.svg"
-            />
+            <></>
+            // <EmptyContent
+            //   title="Cart is empty"
+            //   description="Look like you have no items in your shopping cart."
+            //   img="/assets/illustrations/illustration_empty_cart.svg"
+            // />
           )}
         </Card>
 

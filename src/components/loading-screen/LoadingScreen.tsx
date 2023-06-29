@@ -11,7 +11,7 @@ import { NAV, HEADER } from '../../config-global';
 import { useAuthContext } from '../../auth/useAuthContext';
 //
 import Logo from '../logo';
-import ProgressBar from '../progress-bar';
+// import ProgressBar from '../progress-bar';
 import { useSettingsContext } from '../settings';
 
 // ----------------------------------------------------------------------
@@ -49,7 +49,7 @@ export default function LoadingScreen() {
 
   return (
     <>
-      <ProgressBar />
+      {/* <ProgressBar /> */}
 
       <StyledRoot
         sx={{

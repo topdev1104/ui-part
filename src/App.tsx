@@ -41,7 +41,7 @@ import ThemeProvider from './theme';
 // locales
 import ThemeLocalization from './locales';
 // components
-import { StyledChart } from './components/chart';
+
 import SnackbarProvider from './components/snackbar';
 import ScrollToTop from './components/scroll-to-top';
 import { MotionLazyContainer } from './components/animate';
@@ -72,7 +72,7 @@ export default function App() {
                       {/* <ThemeSettings> */}
                         <ThemeLocalization>
                           <SnackbarProvider>
-                            <StyledChart />
+                            {/* <StyledChart /> */}
                             <Router />
                           </SnackbarProvider>
                         </ThemeLocalization>

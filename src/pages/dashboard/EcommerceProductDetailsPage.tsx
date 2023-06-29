@@ -13,7 +13,7 @@ import { PATH_DASHBOARD } from '../../routes/paths';
 import { ICheckoutCartItem } from '../../@types/product';
 // components
 import Iconify from '../../components/iconify';
-import Markdown from '../../components/markdown';
+// import Markdown from '../../components/markdown';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
 import { SkeletonProductDetails } from '../../components/skeleton';
@@ -72,18 +72,18 @@ export default function EcommerceProductDetailsPage() {
     dispatch(gotoStep(step));
   };
 
-  const TABS = [
-    {
-      value: 'description',
-      label: 'description',
-      component: product ? <Markdown children={product?.description} /> : null,
-    },
-    // {
-    //   value: 'reviews',
-    //   label: `Reviews (${product ? product.reviews.length : ''})`,
-    //   component: product ? <ProductDetailsReview product={product} /> : null,
-    // },
-  ];
+  // const TABS = [
+  //   {
+  //     value: 'description',
+  //     label: 'description',
+  //     component: product ? <Markdown children={product?.description} /> : null,
+  //   },
+  //   // {
+  //   //   value: 'reviews',
+  //   //   label: `Reviews (${product ? product.reviews.length : ''})`,
+  //   //   component: product ? <ProductDetailsReview product={product} /> : null,
+  //   // },
+  // ];
 
   return (
     <>
@@ -163,7 +163,7 @@ export default function EcommerceProductDetailsPage() {
             </Box> */}
 
             <Card>
-              <Tabs
+              {/* <Tabs
                 value={currentTab}
                 onChange={(event, newValue) => setCurrentTab(newValue)}
                 sx={{ px: 3, bgcolor: 'background.neutral' }}
@@ -189,7 +189,7 @@ export default function EcommerceProductDetailsPage() {
                       {tab.component}
                     </Box>
                   )
-              )}
+              )} */}
             </Card>
           </>
         )}

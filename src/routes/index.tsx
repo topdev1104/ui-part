@@ -14,8 +14,8 @@ import {
   LoginPage,
   RegisterPage,
   // Dashboard: General
-  GeneralAppPage,
-  GeneralEcommercePage,
+  // GeneralAppPage,
+  // GeneralEcommercePage,
   // Dashboard: User
   UserAccountPage,
   // Dashboard: Ecommerce
@@ -72,8 +72,8 @@ export default function Router() {
       ),
       children: [
         { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
-        { path: 'app', element: <GeneralAppPage /> },
-        { path: 'ecommerce', element: <GeneralEcommercePage /> },
+        // { path: 'app', element: <GeneralAppPage /> },
+        // { path: 'ecommerce', element: <GeneralEcommercePage /> },
         {
           path: 'e-commerce',
           children: [

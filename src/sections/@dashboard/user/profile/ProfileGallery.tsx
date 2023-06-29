@@ -10,7 +10,7 @@ import { IUserProfileGallery } from '../../../../@types/user';
 // components
 import Image from '../../../../components/image';
 import Iconify from '../../../../components/iconify';
-import Lightbox from '../../../../components/lightbox';
+// import Lightbox from '../../../../components/lightbox';
 
 // ----------------------------------------------------------------------
 
@@ -58,12 +58,12 @@ export default function ProfileGallery({ gallery }: Props) {
         ))}
       </Box>
 
-      <Lightbox
+      {/* <Lightbox
         index={selectedImage}
         slides={imagesLightbox}
         open={selectedImage >= 0}
         close={handleCloseLightbox}
-      />
+      /> */}
     </>
   );
 }

@@ -11,7 +11,7 @@ import { CustomAvatar } from '../../../components/custom-avatar';
 import Iconify from '../../../components/iconify';
 import Scrollbar from '../../../components/scrollbar';
 import MenuPopover from '../../../components/menu-popover';
-import BadgeStatus from '../../../components/badge-status';
+// import BadgeStatus from '../../../components/badge-status';
 import { IconButtonAnimate } from '../../../components/animate';
 
 // ----------------------------------------------------------------------
@@ -57,9 +57,9 @@ export default function ContactsPopover() {
               <ListItemAvatar>
                 <CustomAvatar
                   src={contact.avatar}
-                  BadgeProps={{
-                    badgeContent: <BadgeStatus status={contact.status} />,
-                  }}
+                  // BadgeProps={{
+                  //   badgeContent: <BadgeStatus status={contact.status} />,
+                  // }}
                 />
               </ListItemAvatar>
 

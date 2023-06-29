@@ -8,8 +8,8 @@ import { bgGradient } from '../../../../utils/cssStyles';
 import { IProduct } from '../../../../@types/product';
 // components
 import Image from '../../../../components/image';
-import Lightbox from '../../../../components/lightbox';
-import Carousel, { CarouselArrowIndex } from '../../../../components/carousel';
+// import Lightbox from '../../../../components/lightbox';
+
 
 // ----------------------------------------------------------------------
 
@@ -77,13 +77,13 @@ type Props = {
 export default function ProductDetailsCarousel({ product }: Props) {
   const theme = useTheme();
 
-  const carousel1 = useRef<Carousel | null>(null);
+  // const carousel1 = useRef<Carousel | null>(null);
 
-  const carousel2 = useRef<Carousel | null>(null);
+  // const carousel2 = useRef<Carousel | null>(null);
 
-  const [nav1, setNav1] = useState<Carousel>();
+  // const [nav1, setNav1] = useState<Carousel>();
 
-  const [nav2, setNav2] = useState<Carousel>();
+  // const [nav2, setNav2] = useState<Carousel>();
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -121,30 +121,11 @@ export default function ProductDetailsCarousel({ product }: Props) {
     slidesToShow: product.images.length > 3 ? 3 : product.images.length,
   };
 
-  useEffect(() => {
-    if (carousel1.current) {
-      setNav1(carousel1.current);
-    }
-    if (carousel2.current) {
-      setNav2(carousel2.current);
-    }
-  }, []);
 
-  useEffect(() => {
-    carousel1.current?.slickGoTo(currentIndex);
-  }, [currentIndex]);
-
-  const handlePrev = () => {
-    carousel2.current?.slickPrev();
-  };
-
-  const handleNext = () => {
-    carousel2.current?.slickNext();
-  };
 
   const renderLargeImg = (
     <Box sx={{ mb: 3, borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
-      <Carousel {...carouselSettings1} asNavFor={nav2} ref={carousel1}>
+      {/* <Carousel {...carouselSettings1} asNavFor={nav2} ref={carousel1}>
         {product.images.map((img) => (
           <Image
             key={img}
@@ -155,7 +136,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
           // sx={{ cursor: 'zoom-in' }}
           />
         ))}
-      </Carousel>
+      </Carousel> */}
       {/* 
       <CarouselArrowIndex
         index={currentIndex}
@@ -168,7 +149,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
 
   const renderThumbnails = (
     <StyledThumbnailsContainer length={product.images.length}>
-      <Carousel {...carouselSettings2} asNavFor={nav1} ref={carousel2}>
+      {/* <Carousel {...carouselSettings2} asNavFor={nav1} ref={carousel2}>
         {product.images.map((img, index) => (
           <Image
             key={img}
@@ -183,7 +164,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
             }}
           />
         ))}
-      </Carousel>
+      </Carousel> */}
     </StyledThumbnailsContainer>
   );
 
@@ -201,13 +182,13 @@ export default function ProductDetailsCarousel({ product }: Props) {
         {/* {renderThumbnails} */}
       </Box>
 
-      <Lightbox
+      {/* <Lightbox
         index={selectedImage}
         slides={imagesLightbox}
         open={selectedImage >= 0}
         close={handleCloseLightbox}
         onGetCurrentIndex={(index) => setCurrentIndex(index)}
-      />
+      /> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 // @mui
 import { Box, BoxProps } from '@mui/material';
 // @type
-import { HomeHero } from 'src/sections/home';
+// import { HomeHero } from 'src/sections/home';
 import { IProduct } from '../../../../@types/product';
 // components
 import { SkeletonProductItem } from '../../../../components/skeleton';
