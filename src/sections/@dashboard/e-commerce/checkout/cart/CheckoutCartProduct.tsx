@@ -26,7 +26,7 @@ export default function CheckoutCartProduct({
   onDecrease,
   onIncrease,
 }: CheckoutProductListRowProps) {
-  const { name, size, price, colors, cover, quantity, available } = row;
+  const { name, size, price, colors, quantity, available } = row;
 
   return (
     <TableRow>

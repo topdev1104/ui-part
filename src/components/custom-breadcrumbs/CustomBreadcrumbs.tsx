@@ -1,10 +1,8 @@
 // @mui
 import { Box, Link, Stack, Typography, Breadcrumbs } from '@mui/material';
-import navConfig, { differentMenu } from 'src/layouts/dashboard/nav/config-navigation';
 //
 import { CustomBreadcrumbsProps } from './types';
 import LinkItem from './LinkItem';
-import { NavSectionHorizontal } from '../nav-section';
 
 // ----------------------------------------------------------------------
 

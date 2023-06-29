@@ -4,11 +4,6 @@ import './locales/i18n';
 // scroll bar
 import 'simplebar-react/dist/simplebar.min.css';
 
-// lightbox
-import 'yet-another-react-lightbox/styles.css';
-import 'yet-another-react-lightbox/plugins/captions.css';
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
-
 // map
 import './utils/mapboxgl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -45,7 +40,7 @@ import ThemeLocalization from './locales';
 import SnackbarProvider from './components/snackbar';
 import ScrollToTop from './components/scroll-to-top';
 import { MotionLazyContainer } from './components/animate';
-import { ThemeSettings, SettingsProvider } from './components/settings';
+import { SettingsProvider } from './components/settings';
 
 // Check our docs
 // https://docs.minimals.cc/authentication/ts-version

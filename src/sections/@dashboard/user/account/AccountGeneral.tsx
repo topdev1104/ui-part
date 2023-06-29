@@ -3,12 +3,12 @@ import { useCallback } from 'react';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import SvgColor from 'src/components/svg-color/SvgColor';
-import Icon from 'src/components/color-utils/Icon';
+// import SvgColor from 'src/components/svg-color/SvgColor';
+// import Icon from 'src/components/color-utils/Icon';
 import Iconify from 'src/components/iconify/Iconify';
 
 // @mui
-import { Box, Grid, Card, Stack, Typography,Input, TextField, FormControlLabel, Checkbox } from '@mui/material';
+import { Box, Grid, Card, Stack, Typography,FormControlLabel, Checkbox } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // auth
 import { useAuthContext } from '../../../../auth/useAuthContext';

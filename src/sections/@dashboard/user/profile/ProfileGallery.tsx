@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function ProfileGallery({ gallery }: Props) {
-  const [selectedImage, setSelectedImage] = useState<number>(-1);
+  // const [selectedImage, setSelectedImage] = useState<number>(-1);
 
   const imagesLightbox = gallery.map((img) => ({
     src: img.imageUrl,
@@ -27,12 +27,12 @@ export default function ProfileGallery({ gallery }: Props) {
 
   const handleOpenLightbox = (imageUrl: string) => {
     const imageIndex = imagesLightbox.findIndex((image) => image.src === imageUrl);
-    setSelectedImage(imageIndex);
+    // setSelectedImage(imageIndex);
   };
 
-  const handleCloseLightbox = () => {
-    setSelectedImage(-1);
-  };
+  // const handleCloseLightbox = () => {
+  //   setSelectedImage(-1);
+  // };
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 // @mui
 import { Card, Stack, Paper, Button, Typography, IconButton } from '@mui/material';
 // @types
@@ -16,15 +16,15 @@ type Props = {
 };
 
 export default function AccountBillingPaymentMethod({ cards }: Props) {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(true);
+    // setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <>

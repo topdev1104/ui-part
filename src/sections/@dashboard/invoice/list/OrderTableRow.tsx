@@ -5,12 +5,12 @@ import {
   Stack,
   Button,
   Divider,
-  Checkbox,
+  // Checkbox,
   TableRow,
   MenuItem,
   TableCell,
   IconButton,
-  Typography,
+  // Typography,
 } from '@mui/material';
 // utils
 import { fDate } from '../../../../utils/formatTime';
@@ -20,7 +20,7 @@ import { IOrder } from '../../../../@types/invoice';
 // components
 import Label from '../../../../components/label';
 import Iconify from '../../../../components/iconify';
-import { CustomAvatar } from '../../../../components/custom-avatar';
+// import { CustomAvatar } from '../../../../components/custom-avatar';
 import MenuPopover from '../../../../components/menu-popover';
 import ConfirmDialog from '../../../../components/confirm-dialog';
 
@@ -38,23 +38,23 @@ type Props = {
 export default function OrderTableRow({
   row,
   selected,
-  onSelectRow,
+  // onSelectRow,
   onViewRow,
-  onEditRow,
+  // onEditRow,
   onDeleteRow,
 }: Props) {
 
 
-  const { sent, invoiceNumber, createDate, dueDate, status, invoiceTo, totalPrice, customerName } = row;
+  const { sent, invoiceNumber, dueDate, status, totalPrice, customerName } = row;
   console.log(customerName, '333333333333333333')
 
   const [openConfirm, setOpenConfirm] = useState(false);
 
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
-  const handleOpenConfirm = () => {
-    setOpenConfirm(true);
-  };
+  // const handleOpenConfirm = () => {
+  //   setOpenConfirm(true);
+  // };
 
   const handleCloseConfirm = () => {
     setOpenConfirm(false);

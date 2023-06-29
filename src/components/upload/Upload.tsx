@@ -8,7 +8,6 @@ import { UploadIllustration } from '../../assets/illustrations';
 import Iconify from '../iconify';
 //
 import { UploadProps } from './types';
-import RejectionFiles from './errors/RejectionFiles';
 import MultiFilePreview from './preview/MultiFilePreview';
 import SingleFilePreview from './preview/SingleFilePreview';
 
@@ -48,7 +47,7 @@ export default function Upload({
   sx,
   ...other
 }: UploadProps) {
-  const { getRootProps, getInputProps, isDragActive, isDragReject, fileRejections } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
     multiple,
     disabled,
     ...other,
@@ -97,7 +96,6 @@ export default function Upload({
 
       {helperText && helperText}
 
-      <RejectionFiles fileRejections={fileRejections} />
 
       {hasFile && onDelete && (
         <IconButton

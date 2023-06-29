@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import orderBy from 'lodash/orderBy';
 import { NavSectionHorizontal } from 'src/components/nav-section';
 import { differentMenu, differentMenu1 } from 'src/layouts/dashboard/nav/config-navigation';
@@ -24,7 +24,6 @@ import {
   ShopTagFiltered,
   ShopProductSort,
   ShopProductList,
-  ShopFilterDrawer,
   ShopProductSearch,
 } from '../../sections/@dashboard/e-commerce/shop';
 import CartWidget from '../../sections/@dashboard/e-commerce/CartWidget';
@@ -38,7 +37,7 @@ export default function EcommerceShopPage() {
 
   const { products, checkout } = useSelector((state) => state.product);
 
-  const [openFilter, setOpenFilter] = useState(false);
+
 
   const defaultValues = {
     gender: [],
@@ -79,13 +78,7 @@ export default function EcommerceShopPage() {
     reset();
   };
 
-  const handleOpenFilter = () => {
-    setOpenFilter(true);
-  };
-
-  const handleCloseFilter = () => {
-    setOpenFilter(false);
-  };
+ 
 
   return (
     <>

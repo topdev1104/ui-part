@@ -6,7 +6,6 @@ import { styled, alpha } from '@mui/material/styles';
 import Iconify from '../iconify';
 //
 import { UploadProps } from './types';
-import RejectionFiles from './errors/RejectionFiles';
 import AvatarPreview from './preview/AvatarPreview';
 
 // ----------------------------------------------------------------------
@@ -53,7 +52,7 @@ export default function UploadAvatar({
   sx,
   ...other
 }: UploadProps) {
-  const { getRootProps, getInputProps, isDragActive, isDragReject, fileRejections } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
     multiple: false,
     disabled,
     ...other,
@@ -121,7 +120,6 @@ export default function UploadAvatar({
 
       {helperText && helperText}
 
-      <RejectionFiles fileRejections={fileRejections} />
     </>
   );
 }

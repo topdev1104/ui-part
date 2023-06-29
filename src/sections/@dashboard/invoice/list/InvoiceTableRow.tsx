@@ -1,15 +1,15 @@
 import { useState } from 'react';
 // @mui
 import {
-  Link,
+  // Link,
   Stack,
   Button,
-  Divider,
-  Checkbox,
+  // Divider,
+  // Checkbox,
   TableRow,
-  MenuItem,
+  // MenuItem,
   TableCell,
-  IconButton,
+  // IconButton,
   Typography,
 } from '@mui/material';
 // utils
@@ -18,10 +18,10 @@ import { fCurrency } from '../../../../utils/formatNumber';
 // @types
 import { IInvoice } from '../../../../@types/invoice';
 // components
-import Label from '../../../../components/label';
-import Iconify from '../../../../components/iconify';
+// import Label from '../../../../components/label';
+// import Iconify from '../../../../components/iconify';
 import { CustomAvatar } from '../../../../components/custom-avatar';
-import MenuPopover from '../../../../components/menu-popover';
+// import MenuPopover from '../../../../components/menu-popover';
 import ConfirmDialog from '../../../../components/confirm-dialog';
 
 // ----------------------------------------------------------------------
@@ -38,32 +38,32 @@ type Props = {
 export default function InvoiceTableRow({
   row,
   selected,
-  onSelectRow,
-  onViewRow,
-  onEditRow,
+  // onSelectRow,
+  // onViewRow,
+  // onEditRow,
   onDeleteRow,
 }: Props) {
-  const { sent, invoiceNumber, createDate, dueDate, status, invoiceTo, totalPrice } = row;
+  const { sent, createDate, dueDate, invoiceTo, totalPrice } = row;
 
   const [openConfirm, setOpenConfirm] = useState(false);
 
-  const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
+  // const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
-  const handleOpenConfirm = () => {
-    setOpenConfirm(true);
-  };
+  // const handleOpenConfirm = () => {
+  //   setOpenConfirm(true);
+  // };
 
   const handleCloseConfirm = () => {
     setOpenConfirm(false);
   };
 
-  const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
-    setOpenPopover(event.currentTarget);
-  };
+  // const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
+  //   setOpenPopover(event.currentTarget);
+  // };
 
-  const handleClosePopover = () => {
-    setOpenPopover(null);
-  };
+  // const handleClosePopover = () => {
+  //   setOpenPopover(null);
+  // };
 
   return (
     <>

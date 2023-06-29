@@ -1,12 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-import sumBy from 'lodash/sumBy';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-// @mui
-import { useTheme } from '@mui/material/styles';
+
+import { useNavigate } from 'react-router-dom';
+
 import {
-  Tab,
-  Tabs,
   Card,
   Table,
   Stack,
@@ -27,7 +24,6 @@ import { _invoices } from '../../_mock/arrays';
 // @types
 import { IInvoice } from '../../@types/invoice';
 // components
-import Label from '../../components/label';
 import Iconify from '../../components/iconify';
 import Scrollbar from '../../components/scrollbar';
 import ConfirmDialog from '../../components/confirm-dialog';
@@ -44,7 +40,7 @@ import {
   TablePaginationCustom,
 } from '../../components/table';
 // sections
-import InvoiceAnalytic from '../../sections/@dashboard/invoice/InvoiceAnalytic';
+
 import { InvoiceTableRow, InvoiceTableToolbar } from '../../sections/@dashboard/invoice/list';
 
 // ----------------------------------------------------------------------
@@ -71,7 +67,7 @@ const TABLE_HEAD = [
 // ----------------------------------------------------------------------
 
 export default function InvoiceListPage() {
-  const theme = useTheme();
+  
 
   const { themeStretch } = useSettingsContext();
 
@@ -137,25 +133,6 @@ export default function InvoiceListPage() {
     (!dataFiltered.length && !!filterEndDate) ||
     (!dataFiltered.length && !!filterStartDate);
 
-  const getLengthByStatus = (status: string) =>
-    tableData.filter((item) => item.status === status).length;
-
-  const getTotalPriceByStatus = (status: string) =>
-    sumBy(
-      tableData.filter((item) => item.status === status),
-      'totalPrice'
-    );
-
-  const getPercentByStatus = (status: string) =>
-    (getLengthByStatus(status) / tableData.length) * 100;
-
-  const TABS = [
-    { value: 'all', label: 'All', color: 'info', count: tableData.length },
-    { value: 'completed', label: 'Completed', color: 'success', count: getLengthByStatus('completed') },
-    { value: 'pending', label: 'Pending', color: 'warning', count: getLengthByStatus('pending') },
-    { value: 'canceled', label: 'Canceled', color: 'error', count: getLengthByStatus('canceled') },
-    // { value: 'draft', label: 'Draft', color: 'default', count: getLengthByStatus('draft') },
-  ] as const;
 
   const handleOpenConfirm = () => {
     setOpenConfirm(true);
@@ -165,10 +142,7 @@ export default function InvoiceListPage() {
     setOpenConfirm(false);
   };
 
-  const handleFilterStatus = (event: React.SyntheticEvent<Element, Event>, newValue: string) => {
-    setPage(0);
-    setFilterStatus(newValue);
-  };
+
 
   const handleFilterName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPage(0);

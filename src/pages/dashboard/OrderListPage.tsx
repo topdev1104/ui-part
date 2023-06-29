@@ -1,9 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-import sumBy from 'lodash/sumBy';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 // @mui
-import { useTheme } from '@mui/material/styles';
 import {
   Tab,
   Tabs,
@@ -23,9 +22,9 @@ import { PATH_DASHBOARD } from '../../routes/paths';
 // utils
 import { fTimestamp } from '../../utils/formatTime';
 // _mock_
-import { _invoices, _orders } from '../../_mock/arrays';
+import { _orders } from '../../_mock/arrays';
 // @types
-import { IInvoice, IOrder } from '../../@types/invoice';
+import { IOrder } from '../../@types/invoice';
 // components
 import Label from '../../components/label';
 import Iconify from '../../components/iconify';
@@ -44,7 +43,6 @@ import {
   TablePaginationCustom,
 } from '../../components/table';
 // sections
-import InvoiceAnalytic from '../../sections/@dashboard/invoice/InvoiceAnalytic';
 import { OrderTableRow, InvoiceTableToolbar } from '../../sections/@dashboard/invoice/list';
 
 // ----------------------------------------------------------------------
@@ -71,7 +69,6 @@ const TABLE_HEAD = [
 // ----------------------------------------------------------------------
 
 export default function OrderListPage() {
-  const theme = useTheme();
 
   const { themeStretch } = useSettingsContext();
 
@@ -120,8 +117,6 @@ export default function OrderListPage() {
     filterStartDate,
     filterEndDate,
   });
-
-  console.log(filterStatus, 'dataFiltered')
 
   const dataInPage = dataFiltered.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 

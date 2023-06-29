@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
-import { sentenceCase } from 'change-case';
+// import { sentenceCase } from 'change-case';
 import { useNavigate } from 'react-router-dom';
 // form
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 // @mui
 import {
   Box,
-  Link,
+  // Link,
   Stack,
   Button,
   Rating,
   Divider,
-  MenuItem,
+  // MenuItem,
   Typography,
   IconButton,
 } from '@mui/material';
@@ -24,11 +24,11 @@ import { IProduct, ICheckoutCartItem } from '../../../../@types/product';
 // _mock
 import { _socials } from '../../../../_mock/arrays';
 // components
-import Label from '../../../../components/label';
+// import Label from '../../../../components/label';
 import Iconify from '../../../../components/iconify';
 import { IncrementerButton } from '../../../../components/custom-input';
-import { ColorSinglePicker } from '../../../../components/color-utils';
-import FormProvider, { RHFSelect } from '../../../../components/hook-form';
+// import { ColorSinglePicker } from '../../../../components/color-utils';
+import FormProvider from '../../../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
@@ -58,13 +58,13 @@ export default function ProductDetailsSummary({
     sizes,
     price,
     cover,
-    status,
+    // status,
     colors,
     available,
     priceSale,
     totalRating,
     totalReview,
-    inventoryType,
+    // inventoryType,
   } = product;
 
   const alreadyProduct = cart.map((item) => item.id).includes(id);
@@ -87,7 +87,7 @@ export default function ProductDetailsSummary({
     defaultValues,
   });
 
-  const { reset, watch, control, setValue, handleSubmit } = methods;
+  const { reset, watch, setValue, handleSubmit } = methods;
 
   const values = watch();
 

@@ -15,8 +15,8 @@ import { IProduct } from '../../../../@types/product';
 import Iconify from '../../../../components/iconify';
 import Label from '../../../../components/label';
 import Image from '../../../../components/image';
-import { ColorPreview } from '../../../../components/color-utils';
-import foodUrl from './food.png';
+// import { ColorPreview } from '../../../../components/color-utils';
+// import foodUrl from './food.png';
 // ----------------------------------------------------------------------
 
 type Props = {

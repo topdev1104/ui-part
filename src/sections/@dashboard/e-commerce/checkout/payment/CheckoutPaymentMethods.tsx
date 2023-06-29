@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 // form
 import { Controller, useFormContext } from 'react-hook-form';
 // @mui
@@ -36,15 +36,15 @@ interface Props extends CardProps {
 export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, ...other }: Props) {
   const { control } = useFormContext();
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(true);
+    // setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <>
