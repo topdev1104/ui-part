@@ -14,7 +14,7 @@ import {
   LoginPage,
   RegisterPage,
   // Dashboard: General
-  // GeneralAppPage,
+  GeneralAppPage,
   // GeneralEcommercePage,
   // Dashboard: User
   UserAccountPage,
@@ -69,7 +69,11 @@ export default function Router() {
         <AuthGuard>
           <DashboardLayout />
         </AuthGuard>
-      )
+      ),
+      children : [
+        { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
+        { path: 'app', element: <GeneralAppPage /> },
+      ]
     },
     {
       path: 'dashboard',
@@ -80,7 +84,7 @@ export default function Router() {
       ),
       children: [
         { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
-        // { path: 'app', element: <GeneralAppPage /> },
+        { path: 'app', element: <GeneralAppPage /> },
         // { path: 'ecommerce', element: <GeneralEcommercePage /> },
         {
           path: 'e-commerce',
@@ -109,9 +113,6 @@ export default function Router() {
 
       ],
     },
-
-   
-
   
   ]);
 }
