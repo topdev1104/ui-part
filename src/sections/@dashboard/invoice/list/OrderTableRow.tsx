@@ -10,6 +10,7 @@ import {
   MenuItem,
   TableCell,
   IconButton,
+  Checkbox,
   // Typography,
 } from '@mui/material';
 // utils
@@ -38,9 +39,9 @@ type Props = {
 export default function OrderTableRow({
   row,
   selected,
-  // onSelectRow,
+  onSelectRow,
   onViewRow,
-  // onEditRow,
+  onEditRow,
   onDeleteRow,
 }: Props) {
 
@@ -71,9 +72,9 @@ export default function OrderTableRow({
   return (
     <>
       <TableRow hover selected={selected}>
-        {/* <TableCell padding="checkbox">
+        <TableCell padding="checkbox">
           <Checkbox checked={selected} onClick={onSelectRow} />
-        </TableCell> */}
+        </TableCell>
 
         <TableCell>
           <Stack direction="row" alignItems="center" spacing={2}>
@@ -146,7 +147,7 @@ export default function OrderTableRow({
 
         <MenuItem
           onClick={() => {
-            // onEditRow();
+            onEditRow();
             handleClosePopover();
           }}
         >

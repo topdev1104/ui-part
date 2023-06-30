@@ -9,7 +9,7 @@ import {
 //
 import AccountBillingAddressBook from './AccountBillingAddressBook';
 import AccountBillingPaymentMethod from './AccountBillingPaymentMethod';
-// import AccountBillingInvoiceHistory from './AccountBillingInvoiceHistory';
+import AccountBillingInvoiceHistory from './AccountBillingInvoiceHistory';
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ type Props = {
   addressBook: IUserAccountBillingAddress[];
 };
 
-export default function AccountBilling({ cards, addressBook }: Props) {
+export default function AccountBilling({ cards, invoices, addressBook }: Props) {
   return (
     <Grid container spacing={5}>
       <Grid item xs={12} md={12}>
@@ -55,9 +55,9 @@ export default function AccountBilling({ cards, addressBook }: Props) {
         </Stack>
       </Grid>
 
-      {/* <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={4}>
         <AccountBillingInvoiceHistory invoices={invoices} />
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 }

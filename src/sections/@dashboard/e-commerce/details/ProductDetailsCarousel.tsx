@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 // @mui
-import {  useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // utils
 // import { bgGradient } from '../../../../utils/cssStyles';
@@ -13,7 +13,7 @@ import { IProduct } from '../../../../@types/product';
 
 // ----------------------------------------------------------------------
 
-const THUMB_SIZE = 64;
+// const THUMB_SIZE = 64;
 
 // type StyledThumbnailsContainerProps = {
 //   length: number;

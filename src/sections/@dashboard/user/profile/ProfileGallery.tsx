@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Box, Card, IconButton, Typography, Stack } from '@mui/material';
@@ -21,14 +21,14 @@ type Props = {
 export default function ProfileGallery({ gallery }: Props) {
   // const [selectedImage, setSelectedImage] = useState<number>(-1);
 
-  const imagesLightbox = gallery.map((img) => ({
-    src: img.imageUrl,
-  }));
+  // const imagesLightbox = gallery.map((img) => ({
+  //   src: img.imageUrl,
+  // }));
 
-  const handleOpenLightbox = (imageUrl: string) => {
-    const imageIndex = imagesLightbox.findIndex((image) => image.src === imageUrl);
-    // setSelectedImage(imageIndex);
-  };
+  // const handleOpenLightbox = (imageUrl: string) => {
+  //   const imageIndex = imagesLightbox.findIndex((image) => image.src === imageUrl);
+  //   // setSelectedImage(imageIndex);
+  // };
 
   // const handleCloseLightbox = () => {
   //   setSelectedImage(-1);
@@ -53,7 +53,7 @@ export default function ProfileGallery({ gallery }: Props) {
           <GalleryItem
             key={image.id}
             image={image}
-            onOpenLightbox={() => handleOpenLightbox(image.imageUrl)}
+            onOpenLightbox={()=>{}}
           />
         ))}
       </Box>

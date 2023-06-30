@@ -53,21 +53,13 @@ export default function CheckoutCart({
             sx={{ mb: 3 }}
           />
 
-          {!isEmptyCart ? (
+          {!isEmptyCart &&
             <CheckoutCartProductList
               products={cart}
               onDelete={onDeleteCart}
               onIncreaseQuantity={onIncreaseQuantity}
               onDecreaseQuantity={onDecreaseQuantity}
-            />
-          ) : (
-            <></>
-            // <EmptyContent
-            //   title="Cart is empty"
-            //   description="Look like you have no items in your shopping cart."
-            //   img="/assets/illustrations/illustration_empty_cart.svg"
-            // />
-          )}
+            />}
         </Card>
 
         <Button
