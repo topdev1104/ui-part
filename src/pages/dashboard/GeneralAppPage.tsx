@@ -1,16 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 import { Container, Grid, Button } from '@mui/material';
 // auth
 import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
 import {
-  _appFeatured,
-  _appAuthors,
-  _appInstalled,
-  _appRelated,
-  _appInvoices,
+  _appFeatured
 } from '../../_mock/arrays';
 // components
 import { useSettingsContext } from '../../components/settings';
@@ -27,7 +23,7 @@ import { SeoIllustration } from '../../assets/illustrations';
 export default function GeneralAppPage() {
   const { user } = useAuthContext();
 
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const { themeStretch } = useSettingsContext();
 
